@@ -67,9 +67,11 @@ watch(
                 name=""
                 v-model="todo.completed"
                 :id="`t-${todo.id}`"
-                class="cursor-pointer"
               />
-              <label :for="`t-${todo.id}`" class="font-semibold">
+              <label
+                :for="`t-${todo.id}`"
+                :class="[{ 'line-through': todo.completed }, 'font-semibold']"
+              >
                 {{ todo.title }}
               </label>
             </div>
